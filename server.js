@@ -2,7 +2,7 @@ const express=require('express');
 const bcrypt=require('bcrypt');
 const user=require("./models/users");
 const app=express();
-const=require('cors');
+const cors=require('cors');
 
 app.use(express.json());
 app.use(cors());
