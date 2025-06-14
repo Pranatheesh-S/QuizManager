@@ -6,20 +6,79 @@
     </head>
     <body>
         <div id="mmm">Get started with your</div><br><div id="nnn">account</div>
-    <form class="intro">
+    <form class="intro" id="submission">
     <div id="sss">|Q|<br></div>
-    
+    <label><b>Enter UserName:<br></b>
+    <input type="name" id="username"></label><br>
     <label><b>Enter Gmail:<br></b>
-    <input type="name"></label><br>
+    <input type="email" id="email"></label><br>
     <label><b>Create Password:<br></b>
-    <input type="name"></label><br>
+    <input type="password" id="Password1"></label><br>
     <label><b>Confirm Password:<br></b>
-    <input type="name"></label><br>
+    <input type="password" id="Password2"></label><br>
     <ul><li>Password should contain 8 letters</li>
     <li>It should conatin atleast a single digit</li>
     <li>It should contain a symbol(ex:@,&..)</li></ul><br><br>
-    <button><b><a href="file:///C:/Users/Abhishek/Desktop/Project/QuizManager/verify.html">SUBMIT</a></b></button>
+    <button><b>SUBMIT</b></button>
     </form>
     </body>
+    <script>
+        function generate()
+        {
 
+            const display=document.getElementById("display");
+            display.innerHTML="Email has been sent for the verification";
+            const mailid=document.getElementById("email").value;
+            fetch("http://localhost:3000/sending_email", {
+                        method: 'POST',
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({email:mailid})
+                    })
+                    .then(res => res.json())
+                    .then((data) => {
+                        //content varanum
+                        const {message}=data;
+                        console.log(message);
+                    })
+                    .catch(err => console.error("Error:", err));
+        }
+        //////////////////////////////////////////////////////////////////////////
+                const form = document.getElementById("submission");
+                form.addEventListener("submit", function(e) {
+                    e.preventDefault();
+
+                    const email = document.getElementById("email").value;
+                    const username = document.getElementById("username").value;
+                    const password1 = document.getElementById("Password1").value;
+                    const password2=document.getElementById("Password2").value;
+                    if(password1!=password2)
+                    {   alert("passwords mismatch");
+                        return;
+                }
+                    fetch("http://localhost:3000/login", {
+                        method: 'POST',
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({ username,pass: password })
+                    })
+                    .then(res => res.json())
+                    .then((data) => {
+                        const message = data.message;
+                        if (message === "user not exist") {
+                            alert("User doesn't exist");
+                            console.log("User doesn't exist");
+                        } else if (message === "password not match") {
+                            alert("Password not match");
+                            console.log("Password not match");
+                        } else {
+                            console.log("Login done");
+                            alert("Login successful!");
+                        }
+                    })
+                    .catch(err => console.error("Error:", err));
+                });
+    </script>
 </html>
