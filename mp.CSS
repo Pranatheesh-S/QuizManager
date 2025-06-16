@@ -1,0 +1,102 @@
+html{
+    background-color: aliceblue;
+}
+.tech{
+    font-size: 25px;
+    position: absolute;
+    left: 35%;
+    bottom: 87%;
+}
+.med{
+    font-size: 25px;
+    position: absolute;
+    left: 46%;
+    bottom: 87%;
+}
+.maths{
+      font-size: 25px;
+    position: absolute;
+    left: 60%;
+    bottom: 87%;
+}
+.politics{
+    font-size: 25px;
+    position: absolute;
+    left: 72%;
+    bottom: 87%;
+}
+.container{
+    background-color: gold;
+    border: 10px ;
+    
+    width: 2000px;
+    height: 100px;
+}
+#logo{
+    color: purple;
+    position: absolute;
+    font-size: 100px;
+    left: 25%;
+    bottom: 85%;
+}
+#main{
+    font-size: 90px;
+    
+}
+#log{
+    color: blue;
+    font-size: 30px;
+    position: absolute;
+    left: 87%;
+    bottom: 87%;
+}
+
+#fain{
+    position: absolute;
+    left: 2%;
+    top: 20%;
+    background-color: gray;
+    height:300px;
+    width: 600px;
+     font-size: xx-large;
+    text-align: center;
+    
+}
+#pain{
+    position: absolute;
+    left:56%;
+    top:20%;
+    background-color: paleturquoise;
+    height:300px;
+    width: 600px;
+     font-size: xx-large;
+    text-align: center;
+
+}
+#gain{
+    position: absolute;
+    left: 2%;
+    top: 70%;
+    background-color: orange;
+    height:300px;
+    width: 600px;
+    border: 30px;
+    font-size: xx-large;
+    text-align: center;
+}
+#vain{
+    position: absolute;
+    left: 56%;
+    top: 70%;
+    background-color: antiquewhite;
+    height:300px;
+    width: 600px;
+    border: 30px;
+     font-size: xx-large;
+    text-align: center;
+}
+#sing,#ming,#ring,#king{
+    font-size: larger;
+    background-color: greenyellow;
+}
+
