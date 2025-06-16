@@ -98,5 +98,7 @@ html{
 #sing,#ming,#ring,#king{
     font-size: larger;
     background-color: greenyellow;
+    border-radius: 40%;
+    border: 5px solid black;
 }
 
